@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    document.getElementById("dropZone").addEventListener("drop", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        let file = e.dataTransfer.files[0];
+        fileInput.files = e.dataTransfer.files;
+        uploadForm.submit();
+    })
+</script>
+<body>
+    <div id ="dropZone">
+        <h1>rmbg</h1>
+        <form id = 'uploadForm' action="/" method="post" enctype="multipart/form-data">
+            <input id="fileInput" type = "file" name="file"/>
+            <input type="submit" value="rm">
+
+        </form>
+
+    </div> 
+</body>
+</html>
